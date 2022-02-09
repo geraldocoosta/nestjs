@@ -21,6 +21,10 @@ export class TweetsService {
       limit: 0,
     },
   ) {
-    return this.TweetModel.find().skip(offset).limit(limit).exec();
+    return this.TweetModel.find()
+      .skip(offset)
+      .limit(limit)
+      .sort({ CreatedAt: -1 })
+      .exec();
   }
 }
