@@ -8,8 +8,10 @@ services:
       - 3000:3000
     volumes:
       - .:/home/node/app
+    restart: always
     depends_on:
       - db
+      - kafka
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
   db:
